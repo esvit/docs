@@ -13,6 +13,29 @@ All API requests are made to the base URL: `https://api.nomi.tools`. The API use
 Body parameters should be sent as JSON in the request body, and query parameters should be included in the URL.
 Authentication is done using API keys, which can be generated in the Nomi dashboard. Include the API key in the `Authorization` header of each request as `Bearer YOUR_API_KEY`.
 
+## Rate Limits
+The number of requests per second per account depends on your subscription plan. On free plans, the limit is 10 requests per second. For paid plans, the limit is 100 requests per second.
+If the limit is exceeded, the API will respond with status code 429 and the header "Too Many Requests".
+
+
+## API Key
+API key management is available in **System Settings → API Settings**.
+
+On this page, you can:
+- Create and delete API keys
+- Configure access permissions for each key on a per-module basis
+
+Deleting a key **permanently deactivates** it.
+
+To authenticate using an API key, include the api_key parameter in **every** request to the server.
+
+
+
+
+
+
+
+
 <CardGroup cols={2}>
   <Card
     title="Edit Your Docs"
