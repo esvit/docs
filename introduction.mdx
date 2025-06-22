@@ -1,22 +1,17 @@
 ---
 title: Introduction
-description: 'Welcome to the home of your new documentation'
+description: 'Welcome to the home of Nomi documentation'
 ---
 
-<img
-  className="block dark:hidden"
-  src="/images/hero-light.svg"
-  alt="Hero Light"
-/>
-<img
-  className="hidden dark:block"
-  src="/images/hero-dark.svg"
-  alt="Hero Dark"
-/>
+## What is Nomi API?
 
-## Setting up
+The **Nomi API** is a RESTful interface to the Nomi management accounting system, designed for small and medium-sized businesses. It allows external systems to integrate seamlessly with Nomi by programmatically managing core financial entities.
 
-The first step to world-class documentation is setting up your editing environments.
+## Basics
+
+All API requests are made to the base URL: `https://api.nomi.tools`. The API uses standard HTTP methods (GET, POST, PUT, DELETE) and returns data in JSON format.
+Body parameters should be sent as JSON in the request body, and query parameters should be included in the URL.
+Authentication is done using API keys, which can be generated in the Nomi dashboard. Include the API key in the `Authorization` header of each request as `Bearer YOUR_API_KEY`.
 
 <CardGroup cols={2}>
   <Card
