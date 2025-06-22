@@ -1,7 +1,7 @@
 {
   "openapi": "3.0.1",
   "info": {
-    "title": "OpenAPI Plant Store",
+    "title": "Nomi API",
     "description": "A sample API that uses a plant store as an example to demonstrate features in the OpenAPI specification",
     "license": {
       "name": "MIT"
@@ -10,7 +10,7 @@
   },
   "servers": [
     {
-      "url": "http://sandbox.mintlify.com"
+      "url": "https://api.nomi.tools"
     }
   ],
   "security": [
@@ -19,12 +19,21 @@
     }
   ],
   "paths": {
-    "/plants": {
+    "/v1/finance/accounting/transactions": {
       "get": {
-        "description": "Returns all plants from the system that the user has access to",
+        "description": "Returns a list of transactions",
         "parameters": [
           {
-            "name": "limit",
+            "name": "page",
+            "in": "query",
+            "description": "Page number of the results to fetch",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "size",
             "in": "query",
             "description": "The maximum number of results to return",
             "schema": {
@@ -35,13 +44,13 @@
         ],
         "responses": {
           "200": {
-            "description": "Plant response",
+            "description": "List of transactions",
             "content": {
               "application/json": {
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Plant"
+                    "$ref": "#/components/schemas/Transaction"
                   }
                 }
               }
@@ -66,7 +75,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewPlant"
+                "$ref": "#/components/schemas/TransactionPart"
               }
             }
           },
@@ -78,7 +87,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Plant"
+                  "$ref": "#/components/schemas/Transaction"
                 }
               }
             }
@@ -132,26 +141,32 @@
   },
   "components": {
     "schemas": {
-      "Plant": {
+      "Transaction": {
         "required": [
-          "name"
+          "date",
+          "amount",
+          "accountId"
         ],
         "type": "object",
         "properties": {
-          "name": {
-            "description": "The name of the plant",
+          "date": {
+            "description": "Date of the transaction",
             "type": "string"
           },
-          "tag": {
-            "description": "Tag to specify the type",
+          "amount": {
+            "description": "Amount of the transaction",
+            "type": "number"
+          },
+          "accountId": {
+            "description": "ID of the account associated with the transaction",
             "type": "string"
           }
         }
       },
-      "NewPlant": {
+      "TransactionPart": {
         "allOf": [
           {
-            "$ref": "#/components/schemas/Plant"
+            "$ref": "#/components/schemas/Transaction"
           },
           {
             "required": [
