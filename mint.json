@@ -75,20 +75,20 @@
       ]
     },
     {
-      "group": "Finance / Accounting",
+      "group": "Finance / Transactions",
       "pages": [
-        "finance-accounting/get-all-transactions",
-        "finance-accounting/bulk-delete-transactions",
-        "finance-accounting/get-transaction-filters",
-        "finance-accounting/get-transaction-by-id",
-        "finance-accounting/complete-a-transaction",
-        "finance-accounting/unlink-a-transaction",
-        "finance-accounting/search-planned-transactions",
-        "finance-accounting/suggest-group-operation",
-        "finance-accounting/apply-changes-to-transactions",
-        "finance-accounting/link-transactions",
-        "finance-accounting/bulk-save-transactions",
-        "finance-accounting/import-transactions-from-file"
+        "api-reference/finance-accounting/get-all-transactions",
+        "api-reference/finance-accounting/bulk-delete-transactions",
+        "api-reference/finance-accounting/get-transaction-filters",
+        "api-reference/finance-accounting/get-transaction-by-id",
+        "api-reference/finance-accounting/complete-a-transaction",
+        "api-reference/finance-accounting/unlink-a-transaction",
+        "api-reference/finance-accounting/search-planned-transactions",
+        "api-reference/finance-accounting/suggest-group-operation",
+        "api-reference/finance-accounting/apply-changes-to-transactions",
+        "api-reference/finance-accounting/link-transactions",
+        "api-reference/finance-accounting/bulk-save-transactions",
+        "api-reference/finance-accounting/import-transactions-from-file"
       ]
     }
   ]
