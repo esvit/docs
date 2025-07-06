@@ -38,18 +38,41 @@
     {
       "group": "API Documentation",
       "pages": [
-        "api-reference/finance/get-all-transactions",
-        "api-reference/finance/bulk-delete-transactions",
-        "api-reference/finance/get-transaction-filters",
-        "api-reference/finance/get-transaction-by-id",
-        "api-reference/finance/complete-a-transaction",
-        "api-reference/finance/unlink-a-transaction",
-        "api-reference/finance/search-planned-transactions",
-        "api-reference/finance/suggest-group-operation",
-        "api-reference/finance/apply-changes-to-transactions",
-        "api-reference/finance/link-transactions",
-        "api-reference/finance/bulk-save-transactions",
-        "api-reference/finance/import-transactions-from-file"
+        {
+          "group": "Accounts",
+          "icon": "credit-card",
+          "pages": [
+            "api-reference/finance/get-all-transactions",
+            "api-reference/finance/bulk-delete-transactions",
+            "api-reference/finance/get-transaction-filters",
+            "api-reference/finance/get-transaction-by-id",
+            "api-reference/finance/complete-a-transaction",
+            "api-reference/finance/unlink-a-transaction",
+            "api-reference/finance/search-planned-transactions",
+            "api-reference/finance/suggest-group-operation",
+            "api-reference/finance/apply-changes-to-transactions",
+            "api-reference/finance/link-transactions",
+            "api-reference/finance/bulk-save-transactions",
+            "api-reference/finance/import-transactions-from-file"
+          ]
+        }
+        {
+          "group": "Transactions",
+          "icon": "arrow-right-left",
+          "pages": [
+            "api-reference/finance/get-all-transactions",
+            "api-reference/finance/bulk-delete-transactions",
+            "api-reference/finance/get-transaction-filters",
+            "api-reference/finance/get-transaction-by-id",
+            "api-reference/finance/complete-a-transaction",
+            "api-reference/finance/unlink-a-transaction",
+            "api-reference/finance/search-planned-transactions",
+            "api-reference/finance/suggest-group-operation",
+            "api-reference/finance/apply-changes-to-transactions",
+            "api-reference/finance/link-transactions",
+            "api-reference/finance/bulk-save-transactions",
+          ]
+        },
       ]
     }
   ]
