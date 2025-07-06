@@ -44,7 +44,6 @@
           "pages": [
             "api-reference/accounts/get-all-accounts",
             "api-reference/accounts/get-accounts-totals",
-            "api-reference/accounts/get-accounts-filters",
             "api-reference/accounts/get-account-by-id",
             "api-reference/accounts/update-account",
             "api-reference/accounts/delete-account",
@@ -61,7 +60,6 @@
           "pages": [
             "api-reference/transactions/get-all-transactions",
             "api-reference/transactions/bulk-delete-transactions",
-            "api-reference/transactions/get-transaction-filters",
             "api-reference/transactions/get-transaction-by-id",
             "api-reference/transactions/complete-a-transaction",
             "api-reference/transactions/unlink-a-transaction",
