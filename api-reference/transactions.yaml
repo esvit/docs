@@ -78,23 +78,23 @@ paths:
         204:
           description: Transactions deleted successfully
 
-  /v1/finance/accounting/transactions/filters:
-    get:
-      summary: Get transaction filters
-      description: Retrieve filters for transactions.
-      operationId: getTransactionFilters
-      tags:
-        - Finance / Accounting
-      responses:
-        200:
-          description: Filters for transactions
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  filters:
-                    type: object
+#  /v1/finance/accounting/transactions/filters:
+#    get:
+#      summary: Get transaction filters
+#      description: Retrieve filters for transactions.
+#      operationId: getTransactionFilters
+#      tags:
+#        - Finance / Accounting
+#      responses:
+#        200:
+#          description: Filters for transactions
+#          content:
+#            application/json:
+#              schema:
+#                type: object
+#                properties:
+#                  filters:
+#                    type: object
 
   /v1/finance/accounting/transactions/{id}:
     get:

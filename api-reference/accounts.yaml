@@ -65,23 +65,23 @@ paths:
                   totals:
                     type: object
 
-  /v1/finance/accounts/filters:
-    get:
-      summary: Get accounts filters
-      description: Retrieve filters for accounts.
-      operationId: getAccountsFilters
-      tags:
-        - Finance / Accounts
-      responses:
-        200:
-          description: Filters for accounts
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  filters:
-                    type: object
+#  /v1/finance/accounts/filters:
+#    get:
+#      summary: Get accounts filters
+#      description: Retrieve filters for accounts.
+#      operationId: getAccountsFilters
+#      tags:
+#        - Finance / Accounts
+#      responses:
+#        200:
+#          description: Filters for accounts
+#          content:
+#            application/json:
+#              schema:
+#                type: object
+#                properties:
+#                  filters:
+#                    type: object
 
   /v1/finance/accounts/{id}:
     get:
