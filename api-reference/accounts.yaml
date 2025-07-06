@@ -24,6 +24,13 @@ paths:
             type: string
             enum:
               - totals
+        - name: Accept
+          in: header
+          required: true
+          schema:
+            type: string
+            enum:
+              - application/json
       responses:
         200:
           description: List of accounts
@@ -88,6 +95,13 @@ paths:
           required: true
           schema:
             type: string
+        - name: Accept
+          in: header
+          required: true
+          schema:
+            type: string
+            enum:
+              - application/json
       responses:
         200:
           description: Account details
@@ -108,6 +122,13 @@ paths:
           required: true
           schema:
             type: string
+        - name: Accept
+          in: header
+          required: true
+          schema:
+            type: string
+            enum:
+              - application/json
       requestBody:
         content:
           application/json:
@@ -136,6 +157,13 @@ paths:
           required: true
           schema:
             type: string
+        - name: Accept
+          in: header
+          required: true
+          schema:
+            type: string
+            enum:
+              - application/json
       responses:
         204:
           description: Account deleted successfully
@@ -180,6 +208,13 @@ paths:
           required: true
           schema:
             type: string
+        - name: Accept
+          in: header
+          required: true
+          schema:
+            type: string
+            enum:
+              - application/json
       responses:
         200:
           description: List of account imports
@@ -210,6 +245,13 @@ paths:
           required: true
           schema:
             type: string
+        - name: Accept
+          in: header
+          required: true
+          schema:
+            type: string
+            enum:
+              - application/json
       requestBody:
         content:
           application/json:
@@ -238,6 +280,13 @@ paths:
           required: true
           schema:
             type: string
+        - name: Accept
+          in: header
+          required: true
+          schema:
+            type: string
+            enum:
+              - application/json
       requestBody:
         content:
           multipart/form-data:
@@ -276,6 +325,13 @@ paths:
           required: true
           schema:
             type: string
+        - name: Accept
+          in: header
+          required: true
+          schema:
+            type: string
+            enum:
+              - application/json
       responses:
         204:
           description: Statement saved successfully
