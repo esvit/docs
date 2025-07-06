@@ -2,8 +2,11 @@ openapi: 3.0.0
 info:
   title: Finance Transactions API
   version: 1.0.0
+servers:
+  - url: https://api.nomi.tools
+    description: Main API server
 paths:
-  /finance/accounting/transactions:
+  /v1/finance/accounting/transactions:
     get:
       summary: Get all transactions
       description: Retrieve a list of transactions with pagination.
@@ -55,7 +58,7 @@ paths:
         204:
           description: Transactions deleted successfully
 
-  /finance/accounting/transactions/filters:
+  /v1/finance/accounting/transactions/filters:
     get:
       summary: Get transaction filters
       description: Retrieve filters for transactions.
@@ -73,7 +76,7 @@ paths:
                   filters:
                     type: object
 
-  /finance/accounting/transactions/{id}:
+  /v1/finance/accounting/transactions/{id}:
     get:
       summary: Get transaction by ID
       description: Retrieve a specific transaction by its ID.
@@ -97,7 +100,7 @@ paths:
                   transaction:
                     $ref: '#/components/schemas/TransactionPayload'
 
-  /finance/accounting/transactions/{id}/complete:
+  /v1/finance/accounting/transactions/{id}/complete:
     post:
       summary: Complete a transaction
       description: Mark a transaction as completed.
@@ -114,7 +117,7 @@ paths:
         204:
           description: Transaction completed successfully
 
-  /finance/accounting/transactions/{id}/unlink:
+  /v1/finance/accounting/transactions/{id}/unlink:
     post:
       summary: Unlink a transaction
       description: Unlink a transaction from another entity.
@@ -131,7 +134,7 @@ paths:
         204:
           description: Transaction unlinked successfully
 
-  /finance/accounting/transactions/planned/search:
+  /v1/finance/accounting/transactions/planned/search:
     post:
       summary: Search planned transactions
       description: Search for planned transactions based on criteria.
@@ -158,7 +161,7 @@ paths:
                   meta:
                     type: object
 
-  /finance/accounting/transactions/suggestion:
+  /v1/finance/accounting/transactions/suggestion:
     post:
       summary: Suggest group operation
       description: Suggest a group operation for transactions.
@@ -191,7 +194,7 @@ paths:
                   categoryId:
                     type: string
 
-  /finance/accounting/transactions/apply:
+  /v1/finance/accounting/transactions/apply:
     post:
       summary: Apply changes to transactions
       description: Apply changes to multiple transactions.
@@ -207,7 +210,7 @@ paths:
         204:
           description: Changes applied successfully
 
-  /finance/accounting/transactions/link:
+  /v1/finance/accounting/transactions/link:
     post:
       summary: Link transactions
       description: Link two transactions together.
@@ -235,7 +238,7 @@ paths:
                   id:
                     type: string
 
-  /finance/accounting/transactions/bulk:
+  /v1/finance/accounting/transactions/bulk:
     post:
       summary: Bulk save transactions
       description: Save multiple transactions in bulk.
@@ -262,7 +265,7 @@ paths:
                     items:
                       type: string
 
-  /finance/accounting/transactions/import:
+  /v1/finance/accounting/transactions/import:
     post:
       summary: Import transactions from file
       description: Import transactions from a file (CSV, XLS, etc.).

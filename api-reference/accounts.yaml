@@ -2,8 +2,11 @@ openapi: 3.0.0
 info:
   title: Finance Accounts API
   version: 1.0.0
+servers:
+  - url: https://api.nomi.tools
+    description: Main API server
 paths:
-  /finance/accounts:
+  /v1/finance/accounts:
     get:
       summary: Get all accounts
       description: Retrieve a list of accounts with optional totals.
@@ -33,7 +36,7 @@ paths:
                   meta:
                     $ref: '#/components/schemas/Metadata'
 
-  /finance/accounts/totals:
+  /v1/finance/accounts/totals:
     get:
       summary: Get accounts totals
       description: Retrieve totals for accounts.
@@ -51,7 +54,7 @@ paths:
                   totals:
                     type: object
 
-  /finance/accounts/filters:
+  /v1/finance/accounts/filters:
     get:
       summary: Get accounts filters
       description: Retrieve filters for accounts.
@@ -69,7 +72,7 @@ paths:
                   filters:
                     type: object
 
-  /finance/accounts/{id}:
+  /v1/finance/accounts/{id}:
     get:
       summary: Get account by ID
       description: Retrieve a specific account by its ID.
@@ -134,7 +137,7 @@ paths:
         204:
           description: Account deleted successfully
 
-  /finance/accounts/bulk:
+  /v1/finance/accounts/bulk:
     post:
       summary: Bulk save accounts
       description: Save multiple accounts in bulk.
@@ -161,7 +164,7 @@ paths:
                     items:
                       type: string
 
-  /finance/accounts/{accountId}/imports:
+  /v1/finance/accounts/{accountId}/imports:
     get:
       summary: Get account imports list
       description: Retrieve a list of imports for a specific account.
@@ -191,7 +194,7 @@ paths:
                   meta:
                     type: object
 
-  /finance/accounts/{accountId}/sync:
+  /v1/finance/accounts/{accountId}/sync:
     post:
       summary: Sync account
       description: Synchronize account data for a specific period.
@@ -219,7 +222,7 @@ paths:
         204:
           description: Account synchronized successfully
 
-  /finance/accounts/{accountId}/import:
+  /v1/finance/accounts/{accountId}/import:
     post:
       summary: Upload statement
       description: Upload a statement file for a specific account.
@@ -252,7 +255,7 @@ paths:
                   statement:
                     type: object
 
-  /finance/accounts/{accountId}/import/{id}:
+  /v1/finance/accounts/{accountId}/import/{id}:
     post:
       summary: Save statement
       description: Save a statement import for a specific account.
