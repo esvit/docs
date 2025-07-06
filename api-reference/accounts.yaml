@@ -337,10 +337,17 @@ components:
       properties:
         total:
           type: integer
+          example: 100
           description: Total number of items.
-        limit:
+        size:
           type: integer
+          example: 10
           description: Maximum number of items per page.
-        offset:
+        pages:
           type: integer
-          description: Offset for pagination.
+          example: 1
+          description: Total number of pages.
+        page:
+          type: integer
+          example: 1
+          description: Current page number.
