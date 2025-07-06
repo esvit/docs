@@ -59,17 +59,17 @@
           "group": "Transactions",
           "icon": "arrow-right-arrow-left",
           "pages": [
-            "api-reference/finance/get-all-transactions",
-            "api-reference/finance/bulk-delete-transactions",
-            "api-reference/finance/get-transaction-filters",
-            "api-reference/finance/get-transaction-by-id",
-            "api-reference/finance/complete-a-transaction",
-            "api-reference/finance/unlink-a-transaction",
-            "api-reference/finance/search-planned-transactions",
-            "api-reference/finance/suggest-group-operation",
-            "api-reference/finance/apply-changes-to-transactions",
-            "api-reference/finance/link-transactions",
-            "api-reference/finance/bulk-save-transactions"
+            "api-reference/transactions/get-all-transactions",
+            "api-reference/transactions/bulk-delete-transactions",
+            "api-reference/transactions/get-transaction-filters",
+            "api-reference/transactions/get-transaction-by-id",
+            "api-reference/transactions/complete-a-transaction",
+            "api-reference/transactions/unlink-a-transaction",
+            "api-reference/transactions/search-planned-transactions",
+            "api-reference/transactions/suggest-group-operation",
+            "api-reference/transactions/apply-changes-to-transactions",
+            "api-reference/transactions/link-transactions",
+            "api-reference/transactions/bulk-save-transactions"
           ]
         }
       ]
