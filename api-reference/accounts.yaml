@@ -31,6 +31,7 @@ paths:
             type: string
             enum:
               - application/json
+            default: application/json
       responses:
         200:
           description: List of accounts
@@ -102,6 +103,7 @@ paths:
             type: string
             enum:
               - application/json
+            default: application/json
       responses:
         200:
           description: Account details
@@ -129,6 +131,7 @@ paths:
             type: string
             enum:
               - application/json
+            default: application/json
       requestBody:
         content:
           application/json:
@@ -164,6 +167,7 @@ paths:
             type: string
             enum:
               - application/json
+            default: application/json
       responses:
         204:
           description: Account deleted successfully
@@ -215,6 +219,7 @@ paths:
             type: string
             enum:
               - application/json
+            default: application/json
       responses:
         200:
           description: List of account imports
@@ -252,6 +257,7 @@ paths:
             type: string
             enum:
               - application/json
+            default: application/json
       requestBody:
         content:
           application/json:
@@ -287,6 +293,7 @@ paths:
             type: string
             enum:
               - application/json
+            default: application/json
       requestBody:
         content:
           multipart/form-data:
@@ -332,6 +339,7 @@ paths:
             type: string
             enum:
               - application/json
+            default: application/json
       responses:
         204:
           description: Statement saved successfully

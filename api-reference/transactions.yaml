@@ -27,6 +27,14 @@ paths:
                 type: integer
               offset:
                 type: integer
+        - name: Accept
+          in: header
+          required: true
+          schema:
+            type: string
+            enum:
+              - application/json
+            default: application/json
       responses:
         200:
           description: List of transactions
@@ -47,6 +55,15 @@ paths:
       operationId: bulkDelete
       tags:
         - Finance / Accounting
+      parameters:
+        - name: Accept
+          in: header
+          required: true
+          schema:
+            type: string
+            enum:
+              - application/json
+            default: application/json
       requestBody:
         content:
           application/json:
@@ -92,6 +109,14 @@ paths:
           required: true
           schema:
             type: string
+        - name: Accept
+          in: header
+          required: true
+          schema:
+            type: string
+            enum:
+              - application/json
+            default: application/json
       responses:
         200:
           description: Transaction details
@@ -116,6 +141,14 @@ paths:
           required: true
           schema:
             type: string
+        - name: Accept
+          in: header
+          required: true
+          schema:
+            type: string
+            enum:
+              - application/json
+            default: application/json
       responses:
         204:
           description: Transaction completed successfully
@@ -144,6 +177,15 @@ paths:
       operationId: searchPlanned
       tags:
         - Finance / Accounting
+      parameters:
+        - name: Accept
+          in: header
+          required: true
+          schema:
+            type: string
+            enum:
+              - application/json
+            default: application/json
       requestBody:
         content:
           application/json:
@@ -171,6 +213,15 @@ paths:
       operationId: suggestionGroupOperation
       tags:
         - Finance / Accounting
+      parameters:
+        - name: Accept
+          in: header
+          required: true
+          schema:
+            type: string
+            enum:
+              - application/json
+            default: application/json
       requestBody:
         content:
           application/json:
@@ -204,6 +255,15 @@ paths:
       operationId: applyToTransactions
       tags:
         - Finance / Accounting
+      parameters:
+        - name: Accept
+          in: header
+          required: true
+          schema:
+            type: string
+            enum:
+              - application/json
+            default: application/json
       requestBody:
         content:
           application/json:
@@ -220,6 +280,15 @@ paths:
       operationId: linkTransactions
       tags:
         - Finance / Accounting
+      parameters:
+        - name: Accept
+          in: header
+          required: true
+          schema:
+            type: string
+            enum:
+              - application/json
+            default: application/json
       requestBody:
         content:
           application/json:
@@ -248,6 +317,15 @@ paths:
       operationId: bulkSave
       tags:
         - Finance / Accounting
+      parameters:
+        - name: Accept
+          in: header
+          required: true
+          schema:
+            type: string
+            enum:
+              - application/json
+            default: application/json
       requestBody:
         content:
           application/json:
@@ -275,6 +353,15 @@ paths:
       operationId: importFromFile
       tags:
         - Finance / Accounting
+      parameters:
+        - name: Accept
+          in: header
+          required: true
+          schema:
+            type: string
+            enum:
+              - application/json
+            default: application/json
       requestBody:
         content:
           multipart/form-data:
