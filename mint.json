@@ -1,6 +1,6 @@
 {
   "$schema": "https://mintlify.com/schema.json",
-  "name": "Starter Kit",
+  "name": "Nomi API",
   "logo": {
     "dark": "/logo/dark.svg",
     "light": "/logo/light.svg"
@@ -18,7 +18,7 @@
   "topbarLinks": [
     {
       "name": "Support",
-      "url": "mailto:hellp@nomi.tools"
+      "url": "mailto:hello@nomi.tools"
     }
   ],
   "topbarCtaButton": {
@@ -75,11 +75,20 @@
       ]
     },
     {
-      "group": "Endpoint Examples",
+      "group": "Finance / Accounting",
       "pages": [
-        "api-reference/endpoint/get",
-        "api-reference/endpoint/create",
-        "api-reference/endpoint/delete"
+        "finance-accounting/get-all-transactions",
+        "finance-accounting/bulk-delete-transactions",
+        "finance-accounting/get-transaction-filters",
+        "finance-accounting/get-transaction-by-id",
+        "finance-accounting/complete-a-transaction",
+        "finance-accounting/unlink-a-transaction",
+        "finance-accounting/search-planned-transactions",
+        "finance-accounting/suggest-group-operation",
+        "finance-accounting/apply-changes-to-transactions",
+        "finance-accounting/link-transactions",
+        "finance-accounting/bulk-save-transactions",
+        "finance-accounting/import-transactions-from-file"
       ]
     }
   ]
