@@ -6,7 +6,7 @@ servers:
   - url: https://api.nomi.tools
     description: Main API server
 security:
-  - bearerAuth: []
+  - xTokenAuth: []
 
 paths:
   /v1/finance/accounts:
@@ -434,8 +434,8 @@ components:
           type: string
           description: Error message.
   securitySchemes:
-    BearerAuth:
-      type: http
-      scheme: bearer
-      bearerFormat: JWT
-      description: Use a valid JWT token for authentication.
+    xTokenAuth:
+      type: apiKey
+      in: header
+      name: x-token
+      description: Use the PPT token for authentication. The token should be included in the X-Token header as "{token}".
