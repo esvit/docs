@@ -28,7 +28,7 @@
   "anchors": [],
   "navigation": [
     {
-      "group": "Get Started",
+      "group": "Using the APIs",
       "pages": [
         "introduction",
         "quickstart",
