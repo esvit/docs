@@ -5,6 +5,9 @@ info:
 servers:
   - url: https://api.nomi.tools
     description: Main API server
+security:
+  - bearerAuth: []
+
 paths:
   /v1/finance/accounting/transactions:
     get:
@@ -450,3 +453,21 @@ components:
         isCommitment:
           type: boolean
           nullable: true
+    Error:
+      type: object
+      required:
+        - code
+        - message
+      properties:
+        code:
+          type: string
+          description: Error code.
+        message:
+          type: string
+          description: Error message.
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+      description: Use a valid JWT token for authentication.
