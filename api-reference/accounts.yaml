@@ -31,7 +31,7 @@ paths:
                     items:
                       $ref: '#/components/schemas/Account'
                   meta:
-                    type: object
+                    $ref: '#/components/schemas/Metadata'
 
   /finance/accounts/totals:
     get:
@@ -300,3 +300,47 @@ components:
           type: number
         currency:
           type: string
+
+    Pagination:
+      type: object
+      properties:
+        page:
+          type: integer
+          nullable: true
+          description: Current page number.
+        query:
+          type: string
+          nullable: true
+          description: Search query string.
+        limit:
+          type: integer
+          nullable: true
+          description: Maximum number of items per page.
+        offset:
+          type: integer
+          nullable: true
+          description: Offset for pagination.
+        sorting:
+          type: array
+          items:
+            type: array
+            items:
+              type: string
+          nullable: true
+          description: Sorting criteria as an array of arrays.
+        filter:
+          type: object
+          description: Filter criteria for pagination.
+
+    Metadata:
+      type: object
+      properties:
+        total:
+          type: integer
+          description: Total number of items.
+        limit:
+          type: integer
+          description: Maximum number of items per page.
+        offset:
+          type: integer
+          description: Offset for pagination.

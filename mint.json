@@ -57,6 +57,7 @@
         },
         {
           "group": "Transactions",
+          "tag": "NEW",
           "icon": "arrow-right-arrow-left",
           "pages": [
             "api-reference/transactions/get-all-transactions",
