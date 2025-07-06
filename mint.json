@@ -57,7 +57,7 @@
         },
         {
           "group": "Transactions",
-          "icon": "arrow-right-left",
+          "icon": "arrow-right-arrow-left",
           "pages": [
             "api-reference/finance/get-all-transactions",
             "api-reference/finance/bulk-delete-transactions",
