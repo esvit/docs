@@ -52,10 +52,9 @@
             "api-reference/finance/suggest-group-operation",
             "api-reference/finance/apply-changes-to-transactions",
             "api-reference/finance/link-transactions",
-            "api-reference/finance/bulk-save-transactions",
-            "api-reference/finance/import-transactions-from-file"
+            "api-reference/finance/bulk-save-transactions"
           ]
-        }
+        },
         {
           "group": "Transactions",
           "icon": "arrow-right-left",
@@ -70,9 +69,9 @@
             "api-reference/finance/suggest-group-operation",
             "api-reference/finance/apply-changes-to-transactions",
             "api-reference/finance/link-transactions",
-            "api-reference/finance/bulk-save-transactions",
+            "api-reference/finance/bulk-save-transactions"
           ]
-        },
+        }
       ]
     }
   ]
