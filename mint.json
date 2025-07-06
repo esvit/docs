@@ -42,17 +42,17 @@
           "group": "Accounts",
           "icon": "credit-card",
           "pages": [
-            "api-reference/finance/get-all-transactions",
-            "api-reference/finance/bulk-delete-transactions",
-            "api-reference/finance/get-transaction-filters",
-            "api-reference/finance/get-transaction-by-id",
-            "api-reference/finance/complete-a-transaction",
-            "api-reference/finance/unlink-a-transaction",
-            "api-reference/finance/search-planned-transactions",
-            "api-reference/finance/suggest-group-operation",
-            "api-reference/finance/apply-changes-to-transactions",
-            "api-reference/finance/link-transactions",
-            "api-reference/finance/bulk-save-transactions"
+            "api-reference/accounts/get-all-accounts",
+            "api-reference/accounts/get-accounts-totals",
+            "api-reference/accounts/get-accounts-filters",
+            "api-reference/accounts/get-account-by-id",
+            "api-reference/accounts/update-account",
+            "api-reference/accounts/delete-account",
+            "api-reference/accounts/bulk-save-accounts",
+            "api-reference/accounts/get-account-imports-list",
+            "api-reference/accounts/sync-account",
+            "api-reference/accounts/upload-statement",
+            "api-reference/accounts/save-statement"
           ]
         },
         {

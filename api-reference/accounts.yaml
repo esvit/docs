@@ -1,0 +1,302 @@
+openapi: 3.0.0
+info:
+  title: Finance Accounts API
+  version: 1.0.0
+paths:
+  /finance/accounts:
+    get:
+      summary: Get all accounts
+      description: Retrieve a list of accounts with optional totals.
+      operationId: getAccounts
+      tags:
+        - Finance / Accounts
+      parameters:
+        - name: with
+          in: query
+          required: false
+          schema:
+            type: string
+            enum:
+              - totals
+      responses:
+        200:
+          description: List of accounts
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  accounts:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Account'
+                  meta:
+                    type: object
+
+  /finance/accounts/totals:
+    get:
+      summary: Get accounts totals
+      description: Retrieve totals for accounts.
+      operationId: getAccountsTotals
+      tags:
+        - Finance / Accounts
+      responses:
+        200:
+          description: Accounts totals
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  totals:
+                    type: object
+
+  /finance/accounts/filters:
+    get:
+      summary: Get accounts filters
+      description: Retrieve filters for accounts.
+      operationId: getAccountsFilters
+      tags:
+        - Finance / Accounts
+      responses:
+        200:
+          description: Filters for accounts
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  filters:
+                    type: object
+
+  /finance/accounts/{id}:
+    get:
+      summary: Get account by ID
+      description: Retrieve a specific account by its ID.
+      operationId: getAccount
+      tags:
+        - Finance / Accounts
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: Account details
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Account'
+
+    put:
+      summary: Update account
+      description: Update an existing account.
+      operationId: updateAccount
+      tags:
+        - Finance / Accounts
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AccountPayload'
+      responses:
+        200:
+          description: Account updated successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: string
+
+    delete:
+      summary: Delete account
+      description: Delete an account by its ID.
+      operationId: deleteAccount
+      tags:
+        - Finance / Accounts
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        204:
+          description: Account deleted successfully
+
+  /finance/accounts/bulk:
+    post:
+      summary: Bulk save accounts
+      description: Save multiple accounts in bulk.
+      operationId: saveAccounts
+      tags:
+        - Finance / Accounts
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/AccountPayload'
+      responses:
+        200:
+          description: Accounts saved successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  ids:
+                    type: array
+                    items:
+                      type: string
+
+  /finance/accounts/{accountId}/imports:
+    get:
+      summary: Get account imports list
+      description: Retrieve a list of imports for a specific account.
+      operationId: getAccountsImportsList
+      tags:
+        - Finance / Accounts
+      parameters:
+        - name: accountId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: List of account imports
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  imports:
+                    type: array
+                    items:
+                      type: object
+                  currency:
+                    type: string
+                  meta:
+                    type: object
+
+  /finance/accounts/{accountId}/sync:
+    post:
+      summary: Sync account
+      description: Synchronize account data for a specific period.
+      operationId: syncAccount
+      tags:
+        - Finance / Accounts
+      parameters:
+        - name: accountId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                period:
+                  type: array
+                  items:
+                    type: string
+                    format: date
+      responses:
+        204:
+          description: Account synchronized successfully
+
+  /finance/accounts/{accountId}/import:
+    post:
+      summary: Upload statement
+      description: Upload a statement file for a specific account.
+      operationId: uploadStatement
+      tags:
+        - Finance / Accounts
+      parameters:
+        - name: accountId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                file:
+                  type: string
+                  format: binary
+      responses:
+        200:
+          description: Statement uploaded successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  statement:
+                    type: object
+
+  /finance/accounts/{accountId}/import/{id}:
+    post:
+      summary: Save statement
+      description: Save a statement import for a specific account.
+      operationId: saveStatement
+      tags:
+        - Finance / Accounts
+      parameters:
+        - name: accountId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        204:
+          description: Statement saved successfully
+
+components:
+  schemas:
+    Account:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        balance:
+          type: number
+        currency:
+          type: string
+
+    AccountPayload:
+      type: object
+      properties:
+        id:
+          type: string
+          nullable: true
+        name:
+          type: string
+        balance:
+          type: number
+        currency:
+          type: string
