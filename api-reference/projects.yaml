@@ -1,0 +1,318 @@
+openapi: 3.0.0
+info:
+  title: Projects API
+  version: 1.0.0
+paths:
+  /v1/projects:
+    get:
+      summary: Get list of projects
+      description: Retrieve a paginated list of projects.
+      operationId: getProjects
+      tags:
+        - Projects
+      parameters:
+        - name: pagination
+          in: query
+          required: false
+          schema:
+            $ref: '#/components/schemas/Pagination'
+      responses:
+        200:
+          description: List of projects
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  projects:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Project'
+                  meta:
+                    $ref: '#/components/schemas/Metadata'
+        401:
+          $ref: '#/components/responses/Unauthorized'
+        403:
+          $ref: '#/components/responses/Forbidden'
+
+    post:
+      summary: Create a new project
+      description: Add a new project to the system.
+      operationId: createProject
+      tags:
+        - Projects
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ProjectPayload'
+      responses:
+        200:
+          description: Project created successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: string
+        401:
+          $ref: '#/components/responses/Unauthorized'
+        403:
+          $ref: '#/components/responses/Forbidden'
+
+    delete:
+      summary: Delete multiple projects
+      description: Remove multiple projects from the system.
+      operationId: deleteProjects
+      tags:
+        - Projects
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                ids:
+                  type: array
+                  items:
+                    type: string
+      responses:
+        204:
+          description: Projects deleted successfully
+        401:
+          $ref: '#/components/responses/Unauthorized'
+        403:
+          $ref: '#/components/responses/Forbidden'
+  /v1/projects/{id}:
+    get:
+      summary: Get project by ID
+      description: Retrieve details of a specific project.
+      operationId: getProject
+      tags:
+        - Projects
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: Project details
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Project'
+        404:
+          $ref: '#/components/responses/NotFound'
+        401:
+          $ref: '#/components/responses/Unauthorized'
+        403:
+          $ref: '#/components/responses/Forbidden'
+
+    put:
+      summary: Update project by ID
+      description: Modify details of an existing project.
+      operationId: updateProject
+      tags:
+        - Projects
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ProjectPayload'
+      responses:
+        200:
+          description: Project updated successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: string
+        404:
+          $ref: '#/components/responses/NotFound'
+        401:
+          $ref: '#/components/responses/Unauthorized'
+        403:
+          $ref: '#/components/responses/Forbidden'
+
+    delete:
+      summary: Delete project by ID
+      description: Remove a project from the system.
+      operationId: deleteProject
+      tags:
+        - Projects
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        204:
+          description: Project deleted successfully
+        404:
+          $ref: '#/components/responses/NotFound'
+        401:
+          $ref: '#/components/responses/Unauthorized'
+        403:
+          $ref: '#/components/responses/Forbidden'
+
+  /v1/projects/bulk:
+    post:
+      summary: Bulk save projects
+      description: Save multiple projects in bulk.
+      operationId: bulkSaveProjects
+      tags:
+        - Projects
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/ProjectPayload'
+      responses:
+        200:
+          description: Projects saved successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  ids:
+                    type: array
+                    items:
+                      type: string
+        401:
+          $ref: '#/components/responses/Unauthorized'
+        403:
+          $ref: '#/components/responses/Forbidden'
+
+  /v1/projects/restore:
+    post:
+      summary: Restore projects
+      description: Restore multiple projects by their IDs.
+      operationId: restoreProjects
+      tags:
+        - Projects
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                ids:
+                  type: array
+                  items:
+                    type: string
+      responses:
+        204:
+          description: Projects restored successfully
+        401:
+          $ref: '#/components/responses/Unauthorized'
+        403:
+          $ref: '#/components/responses/Forbidden'
+
+  /v1/projects/filters:
+    get:
+      summary: Get project filters
+      description: Retrieve filters for projects.
+      operationId: getProjectFilters
+      tags:
+        - Projects
+      responses:
+        200:
+          description: Filters retrieved successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  filters:
+                    type: array
+                    items:
+                      type: string
+        401:
+          $ref: '#/components/responses/Unauthorized'
+        403:
+          $ref: '#/components/responses/Forbidden'
+
+components:
+  schemas:
+    Project:
+      type: object
+      properties:
+        id:
+          type: string
+          description: Unique identifier for the project.
+        name:
+          type: string
+          description: Name of the project.
+        notes:
+          type: string
+          description: Additional notes about the project.
+        externalId:
+          type: string
+          description: External identifier for the project.
+
+    ProjectPayload:
+      type: object
+      properties:
+        name:
+          type: string
+          description: Name of the project.
+        notes:
+          type: string
+          description: Additional notes about the project.
+        externalId:
+          type: string
+          description: External identifier for the project.
+
+    Pagination:
+      type: object
+      properties:
+        page:
+          type: integer
+          description: Current page number.
+        limit:
+          type: integer
+          description: Maximum number of items per page.
+        offset:
+          type: integer
+          description: Offset for pagination.
+
+    Metadata:
+      type: object
+      properties:
+        total:
+          type: integer
+          description: Total number of items.
+        limit:
+          type: integer
+          description: Maximum number of items per page.
+        offset:
+          type: integer
+          description: Offset for pagination.
+
+  responses:
+    Unauthorized:
+      description: Unauthorized access
+    Forbidden:
+      description: Forbidden access
+    NotFound:
+      description: Resource not found

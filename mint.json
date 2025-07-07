@@ -67,6 +67,35 @@
             "api-reference/transactions/link-transactions",
             "api-reference/transactions/bulk-save-transactions"
           ]
+        },
+        {
+          "group": "Projects",
+          "icon": "briefcase",
+          "pages": [
+            "api-reference/projects/get-list-of-projects",
+            "api-reference/projects/create-a-new-project",
+            "api-reference/projects/delete-multiple-projects",
+            "api-reference/projects/get-project-by-id",
+            "api-reference/projects/update-project-by-id",
+            "api-reference/projects/delete-project-by-id",
+            "api-reference/projects/bulk-save-projects",
+            "api-reference/projects/restore-projects",
+            "api-reference/projects/get-project-filters"
+          ]
+        },
+        {
+          "group": "Counterparties",
+          "icon": "user-tie",
+          "pages": [
+            "api-reference/counterparties/get-list-of-counterparties",
+            "api-reference/counterparties/create-a-new-counterparty",
+            "api-reference/counterparties/delete-multiple-counterparties",
+            "api-reference/counterparties/get-counterparty-by-id",
+            "api-reference/counterparties/update-counterparty-by-id",
+            "api-reference/counterparties/delete-counterparty-by-id",
+            "api-reference/counterparties/bulk-save-counterparties",
+            "api-reference/counterparties/restore-counterparties"
+          ]
         }
       ]
     }
