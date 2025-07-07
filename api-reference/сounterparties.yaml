@@ -22,6 +22,14 @@ paths:
           required: false
           schema:
             $ref: '#/components/schemas/Pagination'
+        - name: Accept
+          in: header
+          required: true
+          schema:
+            type: string
+            enum:
+              - application/json
+            default: application/json
       responses:
         200:
           description: List of counterparties
@@ -47,6 +55,15 @@ paths:
       operationId: createCounterparty
       tags:
         - Counterparties
+      parameters:
+        - name: Accept
+          in: header
+          required: true
+          schema:
+            type: string
+            enum:
+              - application/json
+            default: application/json
       requestBody:
         required: true
         content:
@@ -74,6 +91,15 @@ paths:
       operationId: deleteCounterparties
       tags:
         - Counterparties
+      parameters:
+        - name: Accept
+          in: header
+          required: true
+          schema:
+            type: string
+            enum:
+              - application/json
+            default: application/json
       requestBody:
         required: true
         content:
@@ -106,6 +132,14 @@ paths:
           required: true
           schema:
             type: string
+        - name: Accept
+          in: header
+          required: true
+          schema:
+            type: string
+            enum:
+              - application/json
+            default: application/json
       responses:
         200:
           description: Counterparty details
@@ -132,6 +166,14 @@ paths:
           required: true
           schema:
             type: string
+        - name: Accept
+          in: header
+          required: true
+          schema:
+            type: string
+            enum:
+              - application/json
+            default: application/json
       requestBody:
         required: true
         content:
@@ -167,6 +209,14 @@ paths:
           required: true
           schema:
             type: string
+        - name: Accept
+          in: header
+          required: true
+          schema:
+            type: string
+            enum:
+              - application/json
+            default: application/json
       responses:
         204:
           description: Counterparty deleted successfully
@@ -184,6 +234,15 @@ paths:
       operationId: bulkSaveCounterparties
       tags:
         - Counterparties
+      parameters:
+        - name: Accept
+          in: header
+          required: true
+          schema:
+            type: string
+            enum:
+              - application/json
+            default: application/json
       requestBody:
         required: true
         content:
@@ -216,6 +275,15 @@ paths:
       operationId: restoreCounterparties
       tags:
         - Counterparties
+      parameters:
+        - name: Accept
+          in: header
+          required: true
+          schema:
+            type: string
+            enum:
+              - application/json
+            default: application/json
       requestBody:
         required: true
         content:

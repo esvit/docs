@@ -22,6 +22,14 @@ paths:
           required: false
           schema:
             $ref: '#/components/schemas/Pagination'
+        - name: Accept
+          in: header
+          required: true
+          schema:
+            type: string
+            enum:
+              - application/json
+            default: application/json
       responses:
         200:
           description: List of projects
@@ -47,6 +55,15 @@ paths:
       operationId: createProject
       tags:
         - Projects
+      parameters:
+        - name: Accept
+          in: header
+          required: true
+          schema:
+            type: string
+            enum:
+              - application/json
+            default: application/json
       requestBody:
         required: true
         content:
@@ -74,6 +91,15 @@ paths:
       operationId: deleteProjects
       tags:
         - Projects
+      parameters:
+        - name: Accept
+          in: header
+          required: true
+          schema:
+            type: string
+            enum:
+              - application/json
+            default: application/json
       requestBody:
         required: true
         content:
@@ -105,6 +131,14 @@ paths:
           required: true
           schema:
             type: string
+        - name: Accept
+          in: header
+          required: true
+          schema:
+            type: string
+            enum:
+              - application/json
+            default: application/json
       responses:
         200:
           description: Project details
@@ -131,6 +165,14 @@ paths:
           required: true
           schema:
             type: string
+        - name: Accept
+          in: header
+          required: true
+          schema:
+            type: string
+            enum:
+              - application/json
+            default: application/json
       requestBody:
         required: true
         content:
@@ -166,6 +208,14 @@ paths:
           required: true
           schema:
             type: string
+        - name: Accept
+          in: header
+          required: true
+          schema:
+            type: string
+            enum:
+              - application/json
+            default: application/json
       responses:
         204:
           description: Project deleted successfully
@@ -183,6 +233,15 @@ paths:
       operationId: bulkSaveProjects
       tags:
         - Projects
+      parameters:
+        - name: Accept
+          in: header
+          required: true
+          schema:
+            type: string
+            enum:
+              - application/json
+            default: application/json
       requestBody:
         required: true
         content:
@@ -215,6 +274,15 @@ paths:
       operationId: restoreProjects
       tags:
         - Projects
+      parameters:
+        - name: Accept
+          in: header
+          required: true
+          schema:
+            type: string
+            enum:
+              - application/json
+            default: application/json
       requestBody:
         required: true
         content:
@@ -229,30 +297,6 @@ paths:
       responses:
         204:
           description: Projects restored successfully
-        401:
-          $ref: '#/components/responses/Unauthorized'
-        403:
-          $ref: '#/components/responses/Forbidden'
-
-  /v1/projects/filters:
-    get:
-      summary: Get project filters
-      description: Retrieve filters for projects.
-      operationId: getProjectFilters
-      tags:
-        - Projects
-      responses:
-        200:
-          description: Filters retrieved successfully
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  filters:
-                    type: array
-                    items:
-                      type: string
         401:
           $ref: '#/components/responses/Unauthorized'
         403:
