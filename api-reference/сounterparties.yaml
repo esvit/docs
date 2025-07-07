@@ -259,14 +259,33 @@ components:
           type: array
           items:
             type: string
+            enum:
+              - client
+              - supplier
+              - partner
+              - contractor
+              - other
           description: Types associated with the counterparty.
 
     CounterpartyPayload:
       type: object
+      required:
+        - name
       properties:
         name:
           type: string
           description: Name of the counterparty.
+        types:
+          type: array
+          items:
+            type: string
+            enum:
+              - client
+              - supplier
+              - partner
+              - contractor
+              - other
+          description: Types associated with the counterparty.
         externalId:
           type: string
           nullable: true
