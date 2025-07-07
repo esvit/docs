@@ -2,6 +2,12 @@ openapi: 3.0.0
 info:
   title: Counterparties API
   version: 1.0.0
+servers:
+  - url: https://api.nomi.tools
+    description: Main API server
+security:
+  - basicAuth: []
+
 paths:
   /v1/counterparties:
     get:
@@ -328,3 +334,11 @@ components:
       description: Forbidden access
     NotFound:
       description: Resource not found
+
+  securitySchemes:
+    basicAuth:
+      type: http
+      scheme: basic
+      description: >
+        Use HTTP Basic Authentication. 
+        Provide your email as login and PPT token as the password.
