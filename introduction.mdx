@@ -11,7 +11,7 @@ The **Nomi API** is a RESTful interface to the Nomi management accounting system
 
 All API requests are made to the base URL: `https://api.nomi.tools`. The API uses standard HTTP methods (GET, POST, PUT, DELETE) and returns data in JSON format.
 Body parameters should be sent as JSON in the request body, and query parameters should be included in the URL.
-Authentication is done using API keys, which can be generated in the Nomi dashboard. Include the API key in the `Authorization` header of each request as `Bearer YOUR_API_KEY`.
+Authentication is done using personal private tokens, which can be generated in the Nomi Development page. Include the PPT in the `Authorization` header of each request as `Basic YOUR_EMAIL:YOUR_PPT`.
 
 ## Rate Limits
 The number of requests per second per account depends on your subscription plan. On free plans, the limit is 10 requests per second. For paid plans, the limit is 100 requests per second.
@@ -19,71 +19,8 @@ If the limit is exceeded, the API will respond with status code 429 and the head
 
 
 ## API Key
-API key management is available in **System Settings → API Settings**.
+API key management is available in **Development → Personal Private Tokens**.
 
-On this page, you can:
-- Create and delete API keys
-- Configure access permissions for each key on a per-module basis
+On this page, you can create and revoke PPTs (Personal Private Tokens)
 
-Deleting a key **permanently deactivates** it.
-
-To authenticate using an API key, include the api_key parameter in **every** request to the server.
-
-
-
-
-
-
-
-
-<CardGroup cols={2}>
-  <Card
-    title="Edit Your Docs"
-    icon="pen-to-square"
-    href="https://mintlify.com/docs/quickstart"
-  >
-    Get your docs set up locally for easy development
-  </Card>
-  <Card
-    title="Preview Changes"
-    icon="image"
-    href="https://mintlify.com/docs/development"
-  >
-    Preview your changes before you push to make sure they're perfect
-  </Card>
-</CardGroup>
-
-## Make it yours
-
-Update your docs to your brand and add valuable content for the best user conversion.
-
-<CardGroup cols={2}>
-  <Card
-    title="Customize Style"
-    icon="palette"
-    href="https://mintlify.com/docs/settings/global"
-  >
-    Customize your docs to your company's colors and brands
-  </Card>
-  <Card
-    title="Reference APIs"
-    icon="code"
-    href="https://mintlify.com/docs/api-playground/openapi"
-  >
-    Automatically generate endpoints from an OpenAPI spec
-  </Card>
-  <Card
-    title="Add Components"
-    icon="screwdriver-wrench"
-    href="https://mintlify.com/docs/components/accordion"
-  >
-    Build interactive features and designs to guide your users
-  </Card>
-  <Card
-    title="Get Inspiration"
-    icon="stars"
-    href="https://mintlify.com/customers"
-  >
-    Check out our showcase of our favorite documentation
-  </Card>
-</CardGroup>
+To authenticate using an API key, include the basic authorization in **every** request to the server.
