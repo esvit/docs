@@ -242,10 +242,24 @@ components:
           description: Name of the counterparty.
         externalId:
           type: string
+          nullable: true
           description: External identifier for the counterparty.
-        businessUnitId:
+        balance:
+          type: number
+          format: float
+          description: Current balance of the counterparty.
+        notes:
           type: string
-          description: Associated business unit ID.
+          nullable: true
+          description: Additional notes about the counterparty.
+        isArchived:
+          type: boolean
+          description: Indicates if the counterparty is archived.
+        types:
+          type: array
+          items:
+            type: string
+          description: Types associated with the counterparty.
 
     CounterpartyPayload:
       type: object
@@ -255,10 +269,12 @@ components:
           description: Name of the counterparty.
         externalId:
           type: string
+          nullable: true
           description: External identifier for the counterparty.
-        businessUnitId:
+        notes:
           type: string
-          description: Associated business unit ID.
+          nullable: true
+          description: Additional notes about the counterparty.
 
     Pagination:
       type: object
