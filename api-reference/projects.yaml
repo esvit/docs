@@ -260,28 +260,87 @@ components:
         id:
           type: string
           description: Unique identifier for the project.
+        projectCategoryId:
+          type: string
+          nullable: true
+          description: Identifier for the project category.
         name:
           type: string
           description: Name of the project.
         notes:
           type: string
+          nullable: true
           description: Additional notes about the project.
-        externalId:
-          type: string
-          description: External identifier for the project.
+        hasPlan:
+          type: boolean
+          description: Indicates if the project has a plan.
+        planIncome:
+          type: number
+          format: float
+          nullable: true
+          description: Planned income for the project.
+        planOutcome:
+          type: number
+          format: float
+          nullable: true
+          description: Planned outcome for the project.
+        income:
+          type: number
+          format: float
+          description: Actual income for the project.
+        outcome:
+          type: number
+          format: float
+          description: Actual outcome for the project.
+        grossProfit:
+          type: number
+          format: float
+          description: Actual gross profit for the project.
+        profitability:
+          type: number
+          format: float
+          description: Actual profitability percentage.
+        isArchived:
+          type: boolean
+          description: Indicates if the project is archived.
+        planGrossProfit:
+          type: number
+          format: float
+          nullable: true
+          description: Planned gross profit for the project.
+        planProfitability:
+          type: number
+          format: float
+          nullable: true
+          description: Planned profitability percentage.
 
     ProjectPayload:
       type: object
       properties:
+        projectCategoryId:
+          type: string
+          nullable: true
+          description: Identifier for the project category.
         name:
           type: string
           description: Name of the project.
         notes:
           type: string
+          nullable: true
           description: Additional notes about the project.
-        externalId:
-          type: string
-          description: External identifier for the project.
+        hasPlan:
+          type: boolean
+          description: Indicates if the project has a plan.
+        planIncome:
+          type: number
+          format: float
+          nullable: true
+          description: Planned income for the project.
+        planOutcome:
+          type: number
+          format: float
+          nullable: true
+          description: Planned outcome for the project.
 
     Pagination:
       type: object
