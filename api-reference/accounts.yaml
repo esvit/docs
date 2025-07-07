@@ -6,7 +6,7 @@ servers:
   - url: https://api.nomi.tools
     description: Main API server
 security:
-  - xTokenAuth: []
+  - basicAuth: []
 
 paths:
   /v1/finance/accounts:
@@ -434,8 +434,9 @@ components:
           type: string
           description: Error message.
   securitySchemes:
-    xTokenAuth:
-      type: apiKey
-      in: header
-      name: x-token
-      description: Use the PPT token for authentication. The token should be included in the X-Token header as "{token}".
+    basicAuth:
+      type: http
+      scheme: basic
+      description: >
+        Use HTTP Basic Authentication. 
+        Provide your email as login and PPT token as the password.
