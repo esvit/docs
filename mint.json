@@ -79,8 +79,7 @@
             "api-reference/projects/update-project-by-id",
             "api-reference/projects/delete-project-by-id",
             "api-reference/projects/bulk-save-projects",
-            "api-reference/projects/restore-projects",
-            "api-reference/projects/get-project-filters"
+            "api-reference/projects/restore-projects"
           ]
         },
         {
